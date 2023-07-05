@@ -7,5 +7,10 @@ jobs:
     steps: 
       - uses: actions/checkout@v2
       - name: Build
-        run: cargo build --verbose
+        run: cargo build --verbose --release
+      - name: Upload artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: nightlight
+          path: ./target/release/nightlight
    
